@@ -44,13 +44,15 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
 
     useEffect(() => {
         getData().then((res)=>{
-            setMagicItemList(res);
+            setMagicItemList(res? res : []);
         })
     },[])
 
     useEffect(() => {
         let soma = 0;
-        magicItemList.map((magicItem: magicItemList) => {
+        console.log(magicItemList);
+        
+        magicItemList !== [] && magicItemList.map((magicItem: magicItemList) => {
             soma = soma + Number(magicItem.preco)
         });
         setPrecoTotal(soma);
@@ -62,10 +64,9 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
     };
 
     const removeMagicItem = (index: string) => {
-        let newMagicItemList = magicItemList.filter((magicItemList: magicItemList) => {
+        let newMagicItemList =  magicItemList.filter((magicItemList: magicItemList) => {
             return magicItemList.index !== index
         })
-
         setMagicItemList(newMagicItemList);
         storeData(newMagicItemList);
     };
