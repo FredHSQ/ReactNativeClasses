@@ -1,7 +1,6 @@
 import React, { createContext, useState, FC, useEffect } from 'react';
 
 import { magicItemList } from '../../pages/Shop';
-import { adiconaItemCart, consultaCart, deleteItemCart } from '../realm';
 
 export interface ICardContext {
     magicItemList?: magicItemList[],
@@ -22,12 +21,12 @@ export const CartContext = createContext<ICardContext>({
 });
 
 export const CartProvider: FC<ICardContext> = ({ children }) => {
-    const [magicItemList, setMagicItemList] = useState<magicItemList[]>(consultaCart());
+    const [magicItemList, setMagicItemList] = useState<magicItemList[]>([]);
     const [precoTotal, setPrecoTotal] =useState<number>(0);
 
     useEffect(()=>{
         let soma = 0;
-        magicItemList.map((magicItem)=>{
+        magicItemList.map((magicItem: magicItemList)=>{
             soma = soma + Number(magicItem.preco)
         });
         setPrecoTotal(soma);
@@ -35,12 +34,10 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
 
     const addMagicItem = (magicItem:magicItemList) => {
         setMagicItemList([...magicItemList, magicItem]);
-        adiconaItemCart(magicItem.index, magicItem.name, magicItem.url, magicItem.preco);
     };
     
     const removeMagicItem = (index: string) => {
-        deleteItemCart(index);
-        setMagicItemList(magicItemList.filter((magicItemList)=> {
+        setMagicItemList(magicItemList.filter((magicItemList: magicItemList)=> {
             return magicItemList.index !== index
         }));
     };

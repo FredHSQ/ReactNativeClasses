@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacityProps, Touchable, TouchableOpacity, Image } from "react-native";
+import React, {  useContext } from "react";
+import {  Text, TouchableOpacityProps, TouchableOpacity, Image } from "react-native";
 import { styles } from "./styles";
 
 import CloseIcon from "../../assets/icons/close_FILL0_wght400_GRAD0_opsz48.png";
-import { deleteItemCart } from "../../contexts/realm";
-import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { magicItemList } from "../../pages/Shop";
 
