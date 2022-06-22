@@ -35,12 +35,12 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
     }
     const getData = async () => {
         try {
-            const jsonValue = await AsyncStorage.getItem('@storage_Key')
-            return jsonValue != null ? JSON.parse(jsonValue) : null;
-        } catch (e) {
-            // error reading value
+          const jsonValue = await AsyncStorage.getItem('@storage_Key')
+          return jsonValue != null ? JSON.parse(jsonValue) : null;
+        } catch(e) {
+          // error reading value
         }
-    }
+      }
 
     useEffect(() => {
         getData().then((res)=>{
@@ -50,8 +50,6 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
 
     useEffect(() => {
         let soma = 0;
-        console.log(magicItemList);
-        
         magicItemList !== [] && magicItemList.map((magicItem: magicItemList) => {
             soma = soma + Number(magicItem.preco)
         });
