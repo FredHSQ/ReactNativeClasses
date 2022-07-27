@@ -43,7 +43,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre o Projeto
 <div style={{ display: flex, flex-direction: row }}>
-  <p>Projeto em react native, usando typescript, onde foi realizado, uma dela de adição de "skills", uma tela que lista pordutos de uma api, uma modal que mostra detalhes desses produtos e tem um botão para adiconar ao carrinho, e uma tela de carrinho que soma os preços dos produtos inserido e tem um botão para retirar do carrinho.</p>
+  <p>Projeto em react native, usando typescript, onde foi realizado, uma dela de adição de "skills", uma tela que lista pordutos de uma api, uma modal que mostra detalhes desses produtos e tem um botão para adicionar ao carrinho, e uma tela de carrinho que soma os preços dos produtos inseridos e tem um botão para retirar do carrinho.</p>
   <img src="https://github.com/FredHSQ/SerratecClasses/blob/main/Images/Skills.png?raw=true" alt="Tela Skills" width="200" height="500">
   <img src="https://github.com/FredHSQ/SerratecClasses/blob/main/Images/Shop.png?raw=true" alt="Tela Shop" width="200" height="500">
   <img src="https://github.com/FredHSQ/SerratecClasses/blob/main/Images/Product.png?raw=true" alt="Tela Product" width="200" height="500">
