@@ -21,6 +21,7 @@ export const CartContext = createContext<ICardContext>({
     precoTotal: 0,
 });
 
+// ver tipo children
 export const CartProvider: FC<ICardContext> = ({ children }) => {
     const [magicItemList, setMagicItemList] = useState<magicItemList[]>([]);
     const [precoTotal, setPrecoTotal] = useState<number>(0);
@@ -33,6 +34,7 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
             // saving error
         }
     }
+    
     const getData = async () => {
         try {
           const jsonValue = await AsyncStorage.getItem('@storage_Key')

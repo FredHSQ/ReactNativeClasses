@@ -12,7 +12,7 @@ import { buscaMagicItens } from '../../services/api';
 import { ModalStats } from '../../components/Modais/ModalStats';
 import { RootTabParamList } from '../../routes';
 
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 export interface magicItemStats {
     index: string,

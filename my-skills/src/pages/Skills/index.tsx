@@ -4,18 +4,13 @@ import { styles } from './styles'
 
 import { Button } from '../../components/Button';
 import { SkillCard } from '../../components/SkillCard';
-import { RootTabParamList } from '../../routes';
-
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 interface SkillData {
     id: string;
     name: string;
 }
 
-type Props = NativeStackScreenProps<RootTabParamList, 'Skills'>;
-
-export function Skills({ route, navigation }: Props) {
+export function Skills() {
     const [newSkill, setNewSkill] = useState('');
     const [mySkills, setMySkills] = useState<SkillData[]>([]);
     const [greetings, setGreetings] = useState('');
