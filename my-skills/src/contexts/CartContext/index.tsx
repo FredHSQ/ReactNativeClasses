@@ -52,7 +52,7 @@ export const CartProvider: FC<ICardContext> = ({ children }) => {
 
     useEffect(() => {
         let soma = 0;
-        magicItemList !== [] && magicItemList.map((magicItem: magicItemList) => {
+        magicItemList[0] && magicItemList.map((magicItem: magicItemList) => {
             soma = soma + Number(magicItem.preco)
         });
         setPrecoTotal(soma);
