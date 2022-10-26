@@ -102,7 +102,7 @@ Todos os pre-requisitos são explicados em aula e o passo a passo também. Segui
    ```
 5. Inicie o projeto
    ```sh
-   expo start;
+   npx expo start;
    ```
    ou (caso de emuladores)
    ```sh
