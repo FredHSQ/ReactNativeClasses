@@ -90,11 +90,7 @@ Todos os pre-requisitos são explicados em aula e o passo a passo também. Segui
    ```
 3. Vá para pasta do projeto
    ```sh
-   cd .\my-skills\
-   ```
-   ou
-   ```sh
-   cd .\myskillsCli\
+   cd habilidades-equipamentos
    ```
 4. Instale os pacotes
    ```sh
