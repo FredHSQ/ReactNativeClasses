@@ -34,6 +34,7 @@
       </ul>
     </li>
     <li><a href="#usage">Uso</a></li>
+	  <li><a href="#usage">Exercicios</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ol>
 </details>

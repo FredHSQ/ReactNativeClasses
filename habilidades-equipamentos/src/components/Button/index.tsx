@@ -1,22 +1,17 @@
 import React from 'react';
-import { TouchableOpacity, TouchableOpacityProps, Text } from 'react-native';
+import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
 import { styles } from './styles';
 
 interface ButtonProps extends TouchableOpacityProps {
-    title : string,  
-};
+	priority?: 'primary' | 'secondary';
+	title: string;
+}
 
-export function Button({ title, ...rest } : ButtonProps) {
-
-    return(
-    <TouchableOpacity
-        style={styles.button}
-        activeOpacity={0.7} 
-        {...rest}
-    >
-        <Text style={styles.buttonText}>
-            {title}
-        </Text>
-    </TouchableOpacity>
-    )
+export const Button = ({ priority='primary', title, ...rest }: ButtonProps) => {
+	return <TouchableOpacity
+		{...rest}
+		style={priority === 'primary' ? styles.button : styles.button2}
+	>
+		<Text style={styles.buttonText}>{ title }</Text>
+	</TouchableOpacity>
 }

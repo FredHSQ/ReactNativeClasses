@@ -1,39 +1,32 @@
-import React, {  useContext } from "react";
-import {  Text, TouchableOpacityProps, TouchableOpacity, Image } from "react-native";
-import { styles } from "./styles";
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { styles } from './style';
 
-import CloseIcon from "../../assets/icons/close_FILL0_wght400_GRAD0_opsz48.png";
-import { CartContext } from "../../contexts/CartContext";
-import { magicItemList } from "../../pages/Shop";
-
-
-interface MagicItemProps extends TouchableOpacityProps {
-    item: magicItemList,
-    setModal: (value: React.SetStateAction<boolean>) => void,
-    setIndexMagicItem: (value: React.SetStateAction<string>) => void,
-    setPreco?: (value: React.SetStateAction<number>) => void,
-    cart?: boolean
-
+export interface MagicItemListProps {
+	index: string;
+	name: string;
+	url: string;
+	preco?: number;
 }
 
-export const MagicItem = ({ item, setModal, setIndexMagicItem, setPreco, cart, ...rest }: MagicItemProps) => {
+export interface MagicItemProps {
+	item: MagicItemListProps,
+	setSelectedIndex: React.Dispatch<React.SetStateAction<string>>,
+	setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
+	setPreco?: React.Dispatch<React.SetStateAction<number>>,
+}
 
-    var removeMagicItem = useContext(CartContext).removeMagicItem;
+export const MagicItem = ({ item, setSelectedIndex, setIsModalVisible, setPreco}: MagicItemProps) => {
 
-    function handleOpenModal() {
-        setIndexMagicItem(item.index);
-        setPreco && setPreco(Number(item.preco))
-        setModal(true);
-    }
+	function abrirModal () {
+		setSelectedIndex(item.index);
+		setPreco && setPreco(item.preco);
+		setIsModalVisible(true);
+	}
 
-    return <TouchableOpacity style={styles.buttonMagicItem} onPress={() => handleOpenModal()} {...rest}>
-        <Text style={styles.textMagicItem}>
-            {item.name}
-        </Text>
-        {cart &&
-            <TouchableOpacity onPress={()=> removeMagicItem(item.index)}>
-                <Image style={styles.closeIcon} source={CloseIcon} />
-            </TouchableOpacity>
-        }
-    </TouchableOpacity>
+	return <TouchableOpacity onPress={abrirModal} style={styles.buttonMagicItem}>
+		<Text style={styles.textMagicItem}>
+			{ item.name }
+		</Text>
+	</TouchableOpacity>
 }
