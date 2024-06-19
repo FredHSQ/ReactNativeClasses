@@ -7,7 +7,7 @@
     <img src="https://d33wubrfki0l68.cloudfront.net/554c3b0e09cf167f0281fda839a5433f2040b349/ecfc9/img/header_logo.svg" alt="Logo React Native" width="80" height="80">
   </a>
 
-<h3 align="center">Serratec Classes</h3>
+<h3 align="center">React Native Classes</h3>
 
   <p align="center">
     Projeto feito para aulas em React Native, o mesmo aplicativo foi feito no Expo e no Cli. Um slide para acompanhamento foi criado.
