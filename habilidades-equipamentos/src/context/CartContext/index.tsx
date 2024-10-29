@@ -15,13 +15,13 @@ export interface CartContextProvider {
 
 
 export const CartContext = createContext<CartContextProvider>({
-	addMagicItemToCart: (magicItem: MagicItemListProps) => { },
+	addMagicItemToCart: () => { },
 	magicItemList: [{
 		index: '',
 		name: '',
 		url: ''
 	}],
-	removeMagicItemFromCart: (index: string) => { },
+	removeMagicItemFromCart: () => { },
 	precoTotal: 0
 });
 
