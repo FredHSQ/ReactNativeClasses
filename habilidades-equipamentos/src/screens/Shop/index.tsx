@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, ActivityIndicator, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { styles } from "./styles";
 import { MagicItem, MagicItemListProps } from "../../components/MagicItem";
 import { getMagicItemList } from "../../services/apiDnd";

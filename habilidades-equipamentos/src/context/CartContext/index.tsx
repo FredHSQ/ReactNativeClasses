@@ -13,7 +13,6 @@ export interface CartContextProvider {
 	precoTotal: number
 }
 
-
 export const CartContext = createContext<CartContextProvider>({
 	addMagicItemToCart: () => { },
 	magicItemList: [{

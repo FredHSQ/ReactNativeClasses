@@ -24,7 +24,6 @@ export interface getMagicItemDetailsResponse {
 	variants?: any[] | null;
 	variant: boolean;
 	desc?: (string)[] | null;
-	url: string;
 }
 
 interface EquipmentCategory {
